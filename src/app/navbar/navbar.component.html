@@ -1,0 +1,81 @@
+<!-- Navegación Superior -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <!-- Logo/Nombre -->
+    <a class="navbar-brand fw-bold text-primary" routerLink="/">
+      <i class="bi bi-code-slash me-2"></i>
+      Mi Aplicación en Angular
+    </a>
+
+    <!-- Botón hamburguesa para móvil -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú de navegación -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <!-- Botón Home -->
+        <li class="nav-item mx-2">
+          <a class="nav-link btn btn-outline-primary btn-sm rounded-pill px-3" 
+             routerLink="/home" routerLinkActive="active">
+            <i class="bi bi-house-door me-1"></i> Home
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link btn btn-outline-primary btn-sm rounded-pill px-3" 
+             routerLink="/dbz" routerLinkActive="active">
+            <i class="bi bi-dribbble me-1"></i> API DBZ
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link btn btn-outline-primary btn-sm rounded-pill px-3" 
+             routerLink="/pokemon" routerLinkActive="active">
+            <i class="bi bi-controller me-1"></i> API Pokémon
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link btn btn-outline-primary btn-sm rounded-pill px-3" 
+             routerLink="/cocteles" routerLinkActive="active">
+            <i class="bi bi-cup-straw me-1"></i> API Cócteles
+          </a>
+        </li>
+        <li class="nav-item dropdown mx-2">
+          <a class="nav-link dropdown-toggle btn btn-outline-primary btn-sm rounded-pill px-3" 
+             href="#" id="navbarDropdown" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-gear me-1"></i> Mi API
+          </a>
+          <div class="dropdown-menu dropdown-menu-end animate slideIn shadow" 
+               aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/my-api/list">
+              <i class="bi bi-list me-2"></i> Listar
+            </a>
+            <a class="dropdown-item" routerLink="/my-api/create">
+              <i class="bi bi-plus-circle me-2"></i> Agregar
+            </a>
+          </div>
+        </li>
+      </ul>
+
+      <ng-container *ngIf="user$ | async as user; else showLogin">
+        <div class="d-flex align-items-center">
+          <img [src]="user.photoURL" alt="user.displayName" class="img-fluid rounded-circle" style="width: 40px; height: 40px;">
+          <span class="ms-2">{{user.displayName}}</span>
+          <button class="btn btn-outline-danger ms-2" (click)="logout()" type="button">
+            <i class="bi bi-box-arrow-right"></i> Logout
+          </button>
+        </div>
+      </ng-container>
+      
+      <ng-template #showLogin>
+        <button class="btn btn-outline-primary" (click)="onGoogleLogin()" type="button">
+          <i class="bi bi-google"></i> Login
+        </button>
+      </ng-template>
+
+    </div>
+  </div>
+</nav>

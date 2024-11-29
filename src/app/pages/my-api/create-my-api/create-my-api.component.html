@@ -1,0 +1,84 @@
+<h1>Agregar nuevo artefacto</h1>
+
+<form [formGroup]="artefactoForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input type="text" id="nombre" class="form-control" formControlName="nombre" />
+  </div>
+  <div *ngIf="artefactoForm.get('nombre')?.invalid && artefactoForm.get('nombre')?.touched" class="text-danger mb-2">
+    El nombre es obligatorio.
+  </div>
+
+  <div class="mb-3">
+    <label for="categoria" class="form-label">Categoria</label>
+    <select id="categoria" class="form-control" formControlName="categoria">
+      <option value="" disabled selected>Seleccione la categoría</option>
+      <option value="Electrodoméstico">Electrodoméstico</option>
+      <option value="Herramienta">Herramienta</option>
+      <option value="Dispositivo">Dispositivo</option>
+      <option value="Otro">Otro</option>
+    </select>
+  </div>
+  <div *ngIf="artefactoForm.get('categoria')?.invalid && artefactoForm.get('categoria')?.touched"
+    class="text-danger mb-2">
+    El categoria es obligatorio.
+  </div>
+
+
+  <!-- <div class="mb-3">
+    <label for="categoria" class="form-label">Categoría</label>
+    <input type="text" id="categoria" class="form-control" formControlName="categoria" />
+  </div>
+  <div *ngIf="artefactoForm.get('categoria')?.invalid && artefactoForm.get('categoria')?.touched"
+    class="text-danger mb-2">
+    La categoría es obligatoria.
+  </div> -->
+
+  <div class="mb-3">
+    <label for="precio" class="form-label">Precio</label>
+    <input type="number" id="precio" class="form-control" formControlName="precio" />
+  </div>
+  <div *ngIf="artefactoForm.get('precio')?.invalid && artefactoForm.get('precio')?.touched" class="text-danger mb-2">
+    El precio es obligatorio y debe ser un número positivo.
+  </div>
+
+  <div class="mb-3">
+    <label for="disponibilidad" class="form-label">Disponibilidad</label>
+    <select id="disponibilidad" class="form-control" formControlName="disponibilidad">
+      <option value="" disabled selected>Seleccione la disponibilidad</option>
+      <option value="Disponible">Disponible</option>
+      <option value="Agotado">Agotado</option>
+      <option value="En pedido">En pedido</option>
+    </select>
+  </div>
+  <div *ngIf="artefactoForm.get('disponibilidad')?.invalid && artefactoForm.get('disponibilidad')?.touched"
+    class="text-danger mb-2">
+    Es obligatorio seleccionar la disponibilidad.
+  </div>
+
+  <!--
+    <div class="mb-3">
+    <label for="disponibilidad" class="form-label">Disponibilidad</label>
+    <input type="text" id="disponibilidad" class="form-control" formControlName="disponibilidad" />
+  </div>
+  <div *ngIf="artefactoForm.get('disponibilidad')?.invalid && artefactoForm.get('disponibilidad')?.touched"
+    class="text-danger mb-2">
+    La disponibilidad es obligatoria.
+  </div> -->
+
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripción</label>
+    <textarea id="descripcion" class="form-control" formControlName="descripcion"></textarea>
+  </div>
+  <div *ngIf="artefactoForm.get('descripcion')?.invalid && artefactoForm.get('descripcion')?.touched"
+    class="text-danger mb-2">
+    La descripción es obligatoria.
+  </div>
+
+  <button type="submit" class="btn btn-outline-secondary me-2" [disabled]="artefactoForm.invalid">
+    Guardar
+  </button>
+  <button type="button" class="btn btn-outline-secondary" (click)="router.navigate(['/miapi/list'])">
+    Cancelar
+  </button>
+</form>

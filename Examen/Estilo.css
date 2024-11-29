@@ -1,0 +1,29 @@
+h1{
+
+    color: #061006
+
+}
+h2{
+    color:#751055
+}
+p{
+    color: rgb(69, 8, 60);
+    background-color: rgb(8, 5, 8);
+    padding:50px;
+    border: 2x solid rgb(0, 0, 0)	
+    margin 50 40px 10px 20px 10px
+    margin 40px 10 px
+    margin auto 50px
+    txt-align center;
+    
+}
+a:link{
+    color:#7d036f;
+    text-decoration: none;
+}
+
+a:visited{
+    color:#eeaddb;
+    text-decoration: none;
+
+}

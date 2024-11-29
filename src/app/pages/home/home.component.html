@@ -1,0 +1,121 @@
+<!-- Hero Section -->
+<div class="container-fluid bg-white text-dark py-5 border-bottom">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold mb-4">Explora el Mundo de las APIs</h1>
+        <p class="lead mb-4">Descubre información sobre Dragon Ball, Pokémon y deliciosos cócteles en nuestra plataforma.</p>
+        <div class="d-flex gap-3">
+          <button class="btn btn-dark btn-lg" routerLink="/dbz">
+            <i class="bi bi-dragon me-2"></i>Comenzar
+          </button>
+          <button class="btn btn-outline-dark btn-lg" data-bs-toggle="modal" data-bs-target="#dragonBallModal">
+            <i class="bi bi-info-circle me-2"></i>Más Info
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección de Características -->
+<div class="container py-5">
+  <div class="row g-4">
+    <!-- Tarjeta Dragon Ball -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center">
+          <div class="p-3 rounded-circle border mb-3">
+            <i class="bi bi-dragon fa-2x text-dark"></i>
+          </div>
+          <h3 class="card-title">Dragon Ball API</h3>
+          <p class="card-text">Explora el universo de Dragon Ball, conoce a tus personajes favoritos y sus transformaciones.</p>
+          <button class="btn btn-outline-dark rounded-pill" routerLink="/dbz">
+            <i class="bi bi-chevron-right me-2"></i>Explorar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta Pokémon -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center">
+          <div class="p-3 rounded-circle border mb-3">
+            <i class="bi bi-controller fa-2x text-dark"></i>
+          </div>
+          <h3 class="card-title">Pokémon API</h3>
+          <p class="card-text">Descubre información detallada sobre todos los Pokémon, sus tipos y habilidades.</p>
+          <button class="btn btn-outline-dark rounded-pill" routerLink="/pokemon">
+            <i class="bi bi-chevron-right me-2"></i>Descubrir
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta Cócteles -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center">
+          <div class="p-3 rounded-circle border mb-3">
+            <i class="bi bi-cup-straw fa-2x text-dark"></i>
+          </div>
+          <h3 class="card-title">Cócteles API</h3>
+          <p class="card-text">Aprende a preparar deliciosos cócteles con nuestras recetas detalladas.</p>
+          <button class="btn btn-outline-dark rounded-pill" routerLink="/cocteles">
+            <i class="bi bi-chevron-right me-2"></i>Preparar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sección API Personal -->
+<div class="container-fluid bg-light py-5 border-top">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h2 class="fw-bold mb-4">Mi API Personal</h2>
+        <p class="lead mb-4">Gestiona tu propia información con nuestra API personalizada.</p>
+        <div class="d-flex gap-3">
+          <button class="btn btn-dark" routerLink="/my-api/list">
+            <i class="bi bi-list me-2"></i>Ver Lista
+          </button>
+          <button class="btn btn-outline-dark" routerLink="/my-api/create">
+            <i class="bi bi-plus me-2"></i>Crear Nuevo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Información Dragon Ball -->
+<div class="modal fade" id="dragonBallModal" tabindex="-1" aria-labelledby="dragonBallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dragonBallModalLabel">Acerca de Dragon Ball API</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>La API de Dragon Ball otorga acceso a una base de datos que incluye personajes, transformaciones y planetas.</p>
+        <p>Consulta la documentación para comenzar.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light text-dark py-4 mt-5 border-top">
+  <div class="container text-center">
+    <p class="mb-0">
+      <i class="bi bi-code-slash me-2"></i>
+      Desarrollado con Angular y Bootstrap
+    </p>
+  </div>
+</footer>

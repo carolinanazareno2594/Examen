@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col text-center">
+      <h2 class="">Administra tu inventario de artefactos</h2>
+    </div>
+  </div>
+
+  <!-- Campo de búsqueda -->
+  <div class="row mb-4">
+    <div class="col-lg-6 mx-auto">
+      <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="searchTerm"
+          placeholder="Buscar artefacto por nombre o ID..." (keyup.enter)="onSearch()" />
+        <button class="btn btn-outline-secondary" type="button" (click)="onSearch()">
+          <i class="fas fa-search">Buscar</i>
+        </button>
+      </div>
+    </div>
+
+    <div class="col-lg-6 d-flex align-items-center">
+      <button class="btn btn-outline-secondary" routerLink="/miapi/create">
+        Agregar nuevo artefacto
+      </button>
+    </div>
+  </div>
+
+  <!-- Tabla de resultados -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Categoría</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Disponibilidad</th>
+        <th scope="col">Descripción</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let artefacto of searchResults; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ artefacto.nombre }}</td>
+        <td>{{ artefacto.categoria }}</td>
+        <td>{{ artefacto.precio }}$</td>
+        <td>{{ artefacto.disponibilidad }}</td>
+        <td>{{ artefacto.descripcion }}</td>
+        <td>
+          <!-- Botón de Actualizar -->
+          <button class="btn btn-outline-secondary btn-sm me-2" [routerLink]="['/miapi/update', artefacto._id]">
+            Editar
+          </button>
+          <!-- Botón de Eliminar -->
+          <button class="btn btn-outline-secondary btn-sm" (click)="eliminarArtefacto(artefacto._id)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
